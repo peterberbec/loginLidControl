@@ -24,8 +24,8 @@ namespace loginLidControl
 		private const int DEVICE_NOTIFY_WINDOW_HANDLE = 0x00000000;
 		private const int PBT_POWERSETTINGCHANGE = 0x8013;
 		private const int WM_POWERBROADCAST = 0x0218;
-		private const int Fingerprint = 0;
-		private const int PIN = 1;
+		private const int Fingerprint = 1;
+		private const int PIN = 0;
 		private readonly string[] loginUUID = {"{D6886603-9D2F-4EB2-B667-1971041FA96B}",	"{BEC09223-B018-416D-A0AC-523971B639F5}" };
 		private readonly string[] loginType = {"PIN",								"Fingerprint" };
 		private bool? _previousLidState = null;
