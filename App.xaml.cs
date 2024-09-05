@@ -1,19 +1,33 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
 using System.Windows.Input;
 using System.Windows;
+using System.Threading;
 
 namespace loginLidControl
 {
 	public partial class App : Application
 	{
+		private static Mutex _mutex = null;
+
 		public TaskbarIcon notifyIcon;
 
 		protected override void OnStartup(StartupEventArgs e)
 		{
-			base.OnStartup(e);
+			const string appName = "loginLidControl";
+			bool createdNew;
+
+			_mutex = new Mutex(true, appName, out createdNew);
+
+			if (!createdNew)
+			{
+				//app is already running! Exiting the application
+				Application.Current.Shutdown();
+			}
 			//create the notifyicon (it's a resource declared in App.xaml)
 			notifyIcon = (TaskbarIcon)FindResource("NotifyIcon");
 			notifyIcon.ToolTipText = "Waiting for lid event...";
+
+			base.OnStartup(e);
 		}
 
 		protected override void OnExit(ExitEventArgs e)
