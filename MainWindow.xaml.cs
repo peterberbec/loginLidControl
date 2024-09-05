@@ -101,7 +101,7 @@ namespace loginLidControl
 
 					if (!isLidOpen == _previousLidState)
 					{
-						LidIs(isLidOpen?1:0);
+						LidIs(isLidOpen?Fingerprint:PIN);
 					}
 					_previousLidState = isLidOpen;
 				}
