@@ -110,7 +110,6 @@ namespace loginLidControl
 
 		private void LidIs(int lidStatus)
 		{
-//			TaskbarIcon notifyIcon = (TaskbarIcon)FindResource("NotifyIcon");
 			notifyIcon.ToolTipText = "Lid open: " + loginType[lidStatus];
 			using (RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\UserTile", true)) // Must dispose key or use "using" keyword
 			{
