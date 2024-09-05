@@ -5,7 +5,6 @@ using System.Windows.Interop;
 using System.ComponentModel;
 using Microsoft.Win32;
 using System.Windows;
-using System.Net.NetworkInformation;
 
 namespace loginLidControl
 {
