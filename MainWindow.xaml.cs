@@ -101,7 +101,7 @@ namespace loginLidControl
 
 					if (!isLidOpen == _previousLidState)
 					{
-						LidIs(isLidOpen?0:1);
+						LidIs(isLidOpen?1:0);
 					}
 					_previousLidState = isLidOpen;
 				}
@@ -115,7 +115,7 @@ namespace loginLidControl
 			{
 				if (key != null)  // Must check for null key
 				{
-					key.SetValue(currentUserSID, loginType[lidStatus], RegistryValueKind.String);
+					key.SetValue(currentUserSID, loginUUID[lidStatus], RegistryValueKind.String);
 				}
 				key.Close();
 			}
