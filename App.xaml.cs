@@ -21,6 +21,7 @@ namespace loginLidControl
 			if (!createdNew)
 			{
 				//app is already running! Exiting the application
+				MessageBox.Show("Application already running.", "mutex collision", MessageBoxButton.OK, MessageBoxImage.Error);
 				Application.Current.Shutdown();
 			}
 			//create the notifyicon (it's a resource declared in App.xaml)
