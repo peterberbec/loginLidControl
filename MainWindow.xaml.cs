@@ -27,7 +27,7 @@ namespace loginLidControl
 		private const int Fingerprint = 1;
 		private const int PIN = 0;
 		private readonly string[] loginUUID = {"{D6886603-9D2F-4EB2-B667-1971041FA96B}",	"{BEC09223-B018-416D-A0AC-523971B639F5}" };
-		private readonly string[] loginType = {"PIN",								"Fingerprint" };
+		private readonly string[] loginType = { "Lid closed: PIN",						"Lid open: Fingerprint" };
 		private bool? _previousLidState = null;
 		private TaskbarIcon notifyIcon;
 		private string currentUserSID;
@@ -110,7 +110,7 @@ namespace loginLidControl
 
 		private void LidIs(int lidStatus)
 		{
-			notifyIcon.ToolTipText = "Lid open: " + loginType[lidStatus];
+			notifyIcon.ToolTipText = loginType[lidStatus];
 			using (RegistryKey key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\UserTile", true)) // Must dispose key or use "using" keyword
 			{
 				if (key != null)  // Must check for null key
