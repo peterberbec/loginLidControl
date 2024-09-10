@@ -11,3 +11,5 @@ Lid closed, we go with pin, so we set the key to {D6886603-9D2F-4EB2-B667-197104
 This currently works for my purposes, but if I get the itch, configuration may come. Password, face and smartcard technically could all be used.
 
 Uses wpf-notifyicon from hardcodet: https://github.com/hardcodet/wpf-notifyicon
+
+[![justforfunnoreally.dev badge](https://img.shields.io/badge/justforfunnoreally-dev-9ff)](https://justforfunnoreally.dev)
